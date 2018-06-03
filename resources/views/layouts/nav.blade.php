@@ -1,44 +1,43 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar is-dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li><a class="nav-link" href="{{ route('carts') }}">View carts</a></li>
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
+        <div class="navbar-brand">
+            <a href="{{ url('/') }}" class="navbar-item is-uppercase">
+                {{ config('app.name', 'Cartedio') }}
+            </a>
+            <div class="navbar-burger">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="{{ route('carts') }}" class="navbar-item">View carts</a>
+            </div>
+            <div class="navbar-end">
                 @guest
-                    <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    <a href="{{ route('login') }}" class="navbar-item">Login</a>
+                    <a href="{{ route('register') }}" class="navbar-item">Register</a>
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="{{ route('home') }}" class="navbar-link">
+                            {{ auth()->user()->name }}
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                        <div class="navbar-dropdown">
+                            <a href="{{ route('logout') }}" class="navbar-item" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                            >
+                                Logout
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
-                    </li>
+                    </div>
                 @endguest
-            </ul>
+            </div>
         </div>
     </div>
 </nav>
