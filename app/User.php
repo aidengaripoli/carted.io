@@ -9,21 +9,21 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'email', 'password',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function sold()
+    {
+        return $this->hasMany(Cart::class, 'seller_id');
+    }
+
+    public function bought()
+    {
+        return $this->hasMany(Cart::class, 'buyer_id');
+    }
 }
