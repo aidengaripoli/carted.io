@@ -39,7 +39,7 @@
                                 <div class="field">
                                     <label class="label" for="password">Password</label>
                                     <div class="control">
-                                        <input id="password" class="input {{ $errors->has('password') ? 'is-danger' : '' }}" name="password" type="text" required>
+                                        <input id="password" class="input {{ $errors->has('password') ? 'is-danger' : '' }}" name="password" type="password" required>
                                         @if ($errors->has('password'))
                                             <p class="help is-danger">{{ $errors->first('password') }}</p>
                                         @endif
@@ -49,7 +49,7 @@
                                 <div class="field">
                                     <label class="label" for="password-confirm">Confirm Password</label>
                                     <div class="control">
-                                        <input id="password-confirm" class="input" name="password-confirmation" type="text" required>
+                                        <input id="password-confirm" class="input" name="password_confirmation" type="password" required>
                                     </div>
                                 </div>
 

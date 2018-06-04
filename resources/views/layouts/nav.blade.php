@@ -19,23 +19,18 @@
                     <a href="{{ route('login') }}" class="navbar-item">Login</a>
                     <a href="{{ route('register') }}" class="navbar-item">Register</a>
                 @else
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a href="{{ route('home') }}" class="navbar-link">
-                            {{ auth()->user()->name }}
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a href="{{ route('logout') }}" class="navbar-item" onclick="event.preventDefault();
+                    <a href="{{ route('dashboard') }}" class="navbar-item">
+                        Dashboard
+                    </a>
+                    <a href="{{ route('logout') }}" class="navbar-item" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"
-                            >
-                                Logout
-                            </a>
+                    >
+                        Logout
+                    </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 @endguest
             </div>
         </div>

@@ -41,7 +41,7 @@
                                 <div class="field">
                                     <label class="label" for="password-confirm">Confirm Password</label>
                                     <div class="control">
-                                        <input id="password-confirm" class="input" name="password-confirmation" type="password" required>
+                                        <input id="password-confirm" class="input" name="password_confirmation" type="password" required>
                                     </div>
                                 </div>
 

@@ -7,3 +7,9 @@
 
 // Bulma
 @import "~bulma/bulma";
+
+.image-hero {
+    display: flex;
+    justify-content: center;
+    background-color: #ECEDEF;
+}

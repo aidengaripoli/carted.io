@@ -11515,3 +11515,13 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+.image-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ECEDEF;
+}
+
