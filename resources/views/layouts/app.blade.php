@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('app')
-    <div id="app">
-        @include('layouts.nav')
+    @include('layouts.nav')
 
+    <div id="app">
         @yield('content')
     </div>
 @endsection

@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="column is-9">
-                    @yield('meme')
+                    @yield('page')
                 </div>
             </div>
         </div>

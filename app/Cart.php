@@ -2,10 +2,30 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
+
+    protected $casts = [
+        'price' => 'integer'
+    ];
+
+    protected $dates = [
+        'created_at'
+    ];
+
+    public function isActive()
+    {
+        return $this->attributes['buyer_id'] === null
+            && !$this->hasExpired();
+    }
+
+    public function hasExpired()
+    {
+        return ! $this->created_at->gte(Carbon::now()->subMinutes(10));
+    }
 
     public function seller()
     {
@@ -24,6 +44,8 @@ class Cart extends Model
 
     public function scopeActive($query)
     {
-        return $query->where('buyer_id', null);
+        return $query
+            ->where('created_at', '>=', Carbon::now()->subMinutes(10))
+            ->where('buyer_id', null);
     }
 }

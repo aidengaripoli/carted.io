@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 
-@section('meme')
+@section('page')
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">
@@ -17,28 +17,28 @@
 
             <table class="table is-bordered is-striped is-fullwidth">
                 <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Size (US)</th>
-                    <th>Price</th>
-                    <th>Date</th>
-                </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Size (US)</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                    </tr>
                 </thead>
                 <tbody>
-                @foreach(auth()->user()->bought as $cart)
-                    <tr>
-                        <th>{{ $cart->id }}</th>
-                        <td>
-                            <a href="{{ $cart->path() }}">
-                                {{ $cart->name }}
-                            </a>
-                        </td>
-                        <td>{{ $cart->size }}</td>
-                        <td>${{ $cart->price / 100 }}</td>
-                        <td>{{ $cart->created_at->toFormattedDateString() }}</td>
-                    </tr>
-                @endforeach
+                    @foreach(auth()->user()->purchased as $cart)
+                        <tr>
+                            <th>{{ $cart->id }}</th>
+                            <td>
+                                <a href="{{ $cart->path() }}">
+                                    {{ $cart->name }}
+                                </a>
+                            </td>
+                            <td>{{ $cart->size }}</td>
+                            <td>${{ $cart->price / 100 }}</td>
+                            <td>{{ $cart->created_at->toFormattedDateString() }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

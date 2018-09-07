@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 
-class CartController extends Controller
+class CartsController extends Controller
 {
     public function __construct()
     {

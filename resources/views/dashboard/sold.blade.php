@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 
-@section('meme')
+@section('page')
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">

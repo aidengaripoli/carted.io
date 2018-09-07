@@ -6,6 +6,7 @@
             </p>
             <ul class="menu-list">
                 <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/dashboard/cards">Cards</a></li>
             </ul>
             <p class="menu-label">
                 Transactions
